@@ -1,0 +1,392 @@
+/* FORMATO INICIAL */
+* {
+    /* width: 100vw; */
+    background-color: #384260;
+}
+* {
+    margin: 0;
+    padding: 0;
+  } 
+  /* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+box-sizing: inherit;
+  }
+html {
+    box-sizing: border-box;
+  
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+}
+/* FIN FORMATO INICIAL */
+
+/* *******************************************************/
+/* Seccion id= navbar class =  navbar */
+/* *******************************************************/
+
+.navbar {
+    grid-row: span 1;
+    display: flex;
+    position: sticky;
+    overflow: hidden;
+    /* position: fixed; */
+    top:0;
+    width: 100vw;
+    min-height: 50px;
+    height: auto;  
+    z-index: 1;
+}
+.navbar  a {
+    color:white;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+.navbar .navbar-right {
+    /* display: flex;
+    flex-direction: column; */
+    justify-self: right;
+    margin: 1.3em 1.3em 1.3em auto;
+    text-align: center;
+    padding-right: 5px;
+    
+    
+}
+
+.navbar .navbar-left {
+    margin-top: 1.3em;
+    margin-left: 1.3em;
+    
+
+}
+
+.nav-link-container a{
+    /* display: block; */
+    /* width: 100%;
+    text-align: center;
+    padding: 15px 5px; */
+    /* order: 2; */
+    display: none;
+}
+
+.active.nav-link-container  a {
+    display: block;
+    /* position: fixed; */
+    /* top:0; */
+    text-align: left;
+    padding: 15px 20px 10px 30px;
+    width: 100vw;
+    height: 100%;
+}
+
+
+/* Para mas grande que telefonos */
+@media all and (min-width: 600px) {
+    .nav-link-iconMenu {
+        display: none;
+       
+    }
+    .nav-link-container {
+        display:flex;
+        justify-content: right;
+        width: 50vw;
+        padding-left: 5px;
+    }
+
+    .nav-link-container a{ 
+        display:block;
+        margin:10px;
+        text-align: left;
+       
+
+    }
+}
+    
+/* *******************************************************/
+/* FIN DE LA Seccion id= navbar class =  navbar */
+/* *******************************************************/
+
+/* *******************************************************/
+/* Seccion id= welcome-section */
+/* *******************************************************/
+.welcome-section {
+    grid-row: span 1;
+    display: grid;
+    grid-template-columns: repeat(20,5%);
+    grid-template-rows: repeat(20,5%);
+    /* justify-content:center; */
+    /* background-color: red; */
+    width: 100vw;
+    height: 100vh;
+    margin-left: 10px;
+    
+
+}
+.saludo {
+    /* width: 100%; */
+    grid-column: 1 / span 20;
+    grid-row: 2 / span 1;
+    
+}
+.img-container {
+    grid-column: 1 / 21;
+    grid-row: 3 / 9;
+
+}
+.about {
+    grid-column: 1 / 21;
+    grid-row: 11 / 20;
+
+
+    height: auto;
+    color: black;
+    background-color: white;
+    overflow: scroll;
+    /* margin-top: 3em; */
+}
+
+img {
+
+  background:#384260;
+  background-size: contain;
+  width: 100%;
+  height: auto;  
+  /* object-position: center; */
+        
+}
+
+
+.welcome-section > .saludo > h1 {
+  color: white;
+  background-color: transparent;
+  
+  text-align: center;
+  font-size: 3em;
+  margin-top: -10px;
+  
+}
+
+.about p,h2 {
+  
+  background-color: transparent;
+  font-size: 2.5em;
+  margin: 5px;
+}
+.about>h2 {
+  margin-bottom: 10px;
+  font-size: 3em;
+  text-align: center;
+}
+
+@media all and (min-width: 550px) and (min-height: 320px) and (max-height:750px) {
+    /* .welcome-section {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 1fr 1fr ;
+
+    } */
+    .saludo {
+        grid-column: 1 / span 10;
+        grid-row: 3 / span 1    
+    }
+
+    .welcome-section > .saludo > h1 {
+        /* color: white;
+        background-color: transparent;
+        
+        text-align: center;
+        font-size: 3em; */
+        margin-top: 0px;
+        
+    }
+    .img-container {
+        grid-column: 1 / span 10;
+        grid-row: 6 / 17;
+        overflow: hidden;
+    
+    }
+    .about {
+        grid-column:  span 10 / span 10;
+        grid-row: 3 / 17;
+    
+    
+        height: auto;
+        color: black;
+        background-color: white;
+        overflow: scroll;
+        /* margin-top: 3em; */
+    }
+    
+    
+
+
+} 
+
+@media all and (min-height:750px) {
+    .saludo {
+        grid-column: 1 / span 20;
+        grid-row: 2 / span 2;
+    }
+
+    .img-container {
+        grid-column: 1 / span 10;
+        grid-row: 4 / span 10;
+    }
+
+    .about{
+        grid-column: 10 / span 10;
+        grid-row: 7 / span 10;
+    }
+    
+}
+
+/* @media all and (min-width: 1000px) {
+    .saludo {
+      
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        
+    }
+
+    img {
+        border-radius: 10%;
+    }
+
+
+    .about {
+        grid-column: 2 / 3;
+        grid-row: 3 / span 2;
+        height: 100%;
+
+        border-radius: 10px;
+       
+    }
+
+
+} */
+
+/* *******************************************************/
+/* FIN DE LA Seccion id= welcome-section    */
+/* *******************************************************/
+
+/* *******************************************************/
+/* Seccion id="projects"  */
+/* *******************************************************/
+.projects {
+    display:grid;
+}
+.titulo-projects {
+    color: white;
+    text-align: center;
+
+}
+
+.container-projects {
+    grid-row: span 1;
+    display: grid;
+    gap:10px;
+    grid-template-columns: repeat(auto-fill,300px);
+    grid-auto-rows: auto;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+
+}
+
+
+
+.project-tile {
+    /* display: flex;
+    flex-direction: column;
+    align-self: center; */
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    padding: 10px;
+    /* object-fit: cover; */
+}
+
+.img-container {
+    width: 100%;
+    height: auto;
+
+}
+
+.titulo-container {
+    width:100%;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    
+}
+
+
+/* *******************************************************/
+/* FIN DE LA Seccion id="projects"  class =   */
+/* *******************************************************/
+
+
+/* *******************************************************/
+/* Seccion id= Contacto  */
+/* *******************************************************/
+.redes {
+    width: 100vw;
+    height: 50hv;
+    display:grid;
+    grid-template-columns: repeat(5,20%);
+    grid-template-rows: 50px 50px;
+    background-color: white;
+    margin: 10px 20px 50px 20px;
+    padding: 15px 20px 15px 20px;
+}
+.redes-titulo {
+    
+    grid-column: 1/6;
+    grid-row: span 1;
+    text-align: center;
+    color: white;
+
+}
+
+.redes-icon {
+    grid-area:redes-icon;
+    grid-column: 1/6;
+    grid-row: 2 / 3;
+    text-align: center;
+    padding:5px;
+}
+.redes i{
+    font-size: 50px;
+    color: white;
+    
+}
+
+.redes i:hover {
+    font-size: 60px;
+}
+
+/* *******************************************************/
+/* FIN DE LA Seccion id= Contacto  class =   */
+/* *******************************************************/
+
+
+
+
+
+
+
+
