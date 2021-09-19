@@ -15,19 +15,22 @@ box-sizing: inherit;
   }
 html {
     box-sizing: border-box;
+    
   
     /* Set font size for easy rem calculations
      * default document font size = 16px, 1rem = 16px, 100% = 16px
      * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
     */
     font-size: 62.5%;
-    scroll-behavior: smooth;
+    overflow:auto;
+    /* scroll-behavior: smooth; */
 }
 
 main {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
+    
 
 }
 /* FIN FORMATO INICIAL */
@@ -287,10 +290,17 @@ img {
 /* *******************************************************/
 .projects {
     display:grid;
+    height: 100vh;
+    grid-template-rows: 10vh 1fr;
+    align-content: flex-start;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 .titulo-projects {
     color: white;
     text-align: center;
+    max-height:20vh;
+    font-size: 1.5em;
 
 }
 
@@ -301,7 +311,7 @@ img {
     grid-template-columns: repeat(auto-fill,300px);
     grid-auto-rows: auto;
     justify-content: center;
-    align-content: center;
+    align-content:flex-start;
     width: 100vw;
 
 }
@@ -345,7 +355,7 @@ img {
 /* *******************************************************/
 .redes {
     width: 100vw;
-    height: 50hv;
+    height: 50vh;
     display:grid;
     grid-template-columns: repeat(5,20%);
     grid-template-rows: 50px 50px;
