@@ -1,0 +1,9 @@
+.cursos-list li {
+    margin-left: 20px;;
+    color:white;
+}
+
+.cursos-list a {
+    text-decoration: dashed;
+    color: white;
+}

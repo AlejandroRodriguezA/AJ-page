@@ -358,7 +358,7 @@ img {
     height: 50vh;
     display:grid;
     grid-template-columns: repeat(5,20%);
-    grid-template-rows: 50px 50px;
+    grid-template-rows: 50px 1fr;
     background-color: white;
     margin: 10px 20px 50px 20px;
     padding: 15px 20px 15px 20px;
@@ -379,15 +379,30 @@ img {
     text-align: center;
     padding:5px;
 }
-.redes i{
-    font-size: 50px;
+.redes-icon i {
+    font-size: 3em;
     color: white;
     
 }
 
-.redes i:hover {
-    font-size: 60px;
+.redes a {
+    height: 100%;
 }
+
+.redes-icon a:hover i{
+    font-size: 4em;
+}
+
+.redes-icon h3 {
+    color: white;
+}
+
+#whatSapp i {
+    background-color: white;
+    color: aquamarine;
+}
+
+
 
 /* *******************************************************/
 /* FIN DE LA Seccion id= Contacto  class =   */

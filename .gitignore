@@ -1,1 +1,6 @@
+# Los comentarios van asi.
+# Para excluir los "#" se tiene que utilizar \#.
 .DS_Store
+*/.DS_Store
+assets/.DS_Store
+
